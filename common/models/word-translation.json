@@ -1,0 +1,27 @@
+{
+  "name": "WordTranslation",
+  "plural": "WordTranslations",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "language_id": {
+      "type": "number",
+      "required": true
+    },
+    "root": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

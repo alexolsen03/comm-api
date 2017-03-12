@@ -31,5 +31,21 @@
   "Story": {
     "dataSource": "mongoDB",
     "public": true
+  },
+  "Jumble": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Word": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "WordTranslation": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Language": {
+    "dataSource": "mongoDB",
+    "public": true
   }
 }
