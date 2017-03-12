@@ -27,5 +27,9 @@
   "item": {
     "dataSource": "mongoDB",
     "public": true
+  },
+  "Story": {
+    "dataSource": "mongoDB",
+    "public": true
   }
 }

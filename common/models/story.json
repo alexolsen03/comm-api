@@ -1,0 +1,42 @@
+{
+  "name": "Story",
+  "plural": "Stories",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "string",
+      "required": true
+    },
+    "jumble": {
+      "type": [
+        "object"
+      ],
+      "required": true
+    },
+    "likes": {
+      "type": "number",
+      "default": 0
+    },
+    "owner": {
+      "type": "object",
+      "required": true
+    },
+    "comments": {
+      "type": [
+        "object"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
