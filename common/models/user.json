@@ -8,7 +8,14 @@
   },
   "properties": {},
   "validations": [],
-  "relations": {},
+  "relations": {
+      "roles": {
+        "type": "hasMany",
+        "model": "Role",
+        "foreignKey": "principalId",
+        "through": "RoleMapping"
+      }
+    },
   "acls": [
     {
       "accessType": "READ",
