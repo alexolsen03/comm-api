@@ -6,7 +6,8 @@
     ]
   },
   "User": {
-    "dataSource": "mongoDB"
+    "dataSource": "mongoDB",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
@@ -25,6 +26,30 @@
     "public": false
   },
   "item": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Story": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Jumble": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Word": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "WordTranslation": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Language": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "user": {
     "dataSource": "mongoDB",
     "public": true
   }
