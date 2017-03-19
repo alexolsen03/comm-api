@@ -21,18 +21,24 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "word": {
+      "type": "belongsTo",
+      "model": "Word",
+      "foreignKey": ""
+    }
+  },
   "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    },
     {
       "accessType": "READ",
       "principalType": "ROLE",
       "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "admin",
       "permission": "ALLOW"
     }
   ],
