@@ -6,7 +6,8 @@
     ]
   },
   "User": {
-    "dataSource": "mongoDB"
+    "dataSource": "mongoDB",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
@@ -45,6 +46,10 @@
     "public": true
   },
   "Language": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "user": {
     "dataSource": "mongoDB",
     "public": true
   }
