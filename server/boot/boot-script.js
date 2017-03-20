@@ -2,6 +2,18 @@ module.exports = function (app) {
   var User = app.models.user;
   var Role = app.models.Role;
   var RoleMapping = app.models.RoleMapping;
+  var Language = app.models.Language;
+
+  // Language.create([
+  //     {
+  //       code: "en-US",
+  //       description: "American English",
+  //     },
+  //     {
+  //       code: "ko",
+  //       description: "Korean"
+  //     }
+  //   ])
 
   User.findById(
     '58cdbbe9fb4378a4630ae19b'
