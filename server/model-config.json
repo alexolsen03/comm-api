@@ -52,5 +52,9 @@
   "user": {
     "dataSource": "mongoDB",
     "public": true
+  },
+  "JumbleGrouping": {
+    "dataSource": "mongoDB",
+    "public": true
   }
 }

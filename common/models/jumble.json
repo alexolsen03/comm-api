@@ -6,23 +6,27 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {
-    "words": {
-      "type": [
-        "object"
-      ],
-      "required": true
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "translations": {
+      "type": "hasMany",
+      "model": "WordTranslation",
+      "foreignKey": "",
+      "options": {
+        "validate": true
+      }
+    },
+    "language": {
+      "type": "belongsTo",
+      "model": "Language",
+      "foreignKey": "",
+      "options": {
+        "validate": true
+      }
     }
   },
-  "validations": [],
-  "relations": {},
   "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    },
     {
       "accessType": "READ",
       "principalType": "ROLE",
@@ -32,9 +36,15 @@
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
-      "principalId": "Admin",
+      "principalId": "admin",
       "permission": "ALLOW",
       "property": "create"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
     }
   ],
   "methods": {}

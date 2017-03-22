@@ -1,0 +1,25 @@
+{
+  "name": "JumbleGrouping",
+  "plural": "JumbleGroupings",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "translation": {
+      "type": "belongsTo",
+      "model": "WordTranslation",
+      "foreignKey": ""
+    },
+    "jumble": {
+      "type": "belongsTo",
+      "model": "Jumble",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
