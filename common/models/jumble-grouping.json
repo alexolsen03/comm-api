@@ -9,9 +9,9 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "translation": {
+    "word": {
       "type": "belongsTo",
-      "model": "WordTranslation",
+      "model": "Word",
       "foreignKey": ""
     },
     "jumble": {

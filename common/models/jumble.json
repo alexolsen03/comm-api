@@ -24,6 +24,11 @@
       "options": {
         "validate": true
       }
+    },
+    "grouping": {
+      "type": "hasMany",
+      "model": "JumbleGrouping",
+      "foreignKey": ""
     }
   },
   "acls": [

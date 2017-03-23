@@ -17,9 +17,15 @@
     "translations": {
       "type": "hasMany",
       "model": "WordTranslation",
+      "foreignKey": "",
       "options": {
         "validate": true
       }
+    },
+    "groupings": {
+      "type": "hasMany",
+      "model": "JumbleGrouping",
+      "foreignKey": ""
     }
   },
   "acls": [

@@ -16,7 +16,7 @@ module.exports = function(Jumblegrouping) {
     // };
 
     Jumblegrouping.jumble = function (jumbleId, cb) {
-        Jumblegrouping.find({where: {jumbleId: ObjectId(jumbleId)}}, function (err, jumble) {
+        Jumblegrouping.find({where: {jumbleId: jumbleId }}, function (err, jumble) {
             console.log(err);
             console.log('###########');
             console.log(jumble);

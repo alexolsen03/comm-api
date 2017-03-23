@@ -4,6 +4,16 @@ module.exports = function (app) {
   var RoleMapping = app.models.RoleMapping;
   var Language = app.models.Language;
 
+  var Word = app.models.Word;
+  var Translation = app.models.Translation;
+  var Jumble = app.models.Jumble;
+  var JumbleGrouping = app.models.JumbleGrouping;
+
+// Jumble.nestRemoting('grouping');
+// JumbleGrouping.nestRemoting('words')
+// Word.nestRemoting('translations');
+
+
   // Language.create([
   //     {
   //       code: "en-US",
@@ -20,16 +30,11 @@ module.exports = function (app) {
   , function(err, users) {
     if (err) return console.log(err);
 
-    console.log(users);
-
     // create the admin role
     Role.create({
       name: 'admin'
     }, function(err, role) {
       if (err) console.log('error1');
-
-      console.log('role is ', role);
-      console.log('userid ', users.id);
 
       //make bob an admin
       role.principals.create({
