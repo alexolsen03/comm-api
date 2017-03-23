@@ -19,11 +19,11 @@
   },
   "RoleMapping": {
     "dataSource": "db",
-    "public": false
+    "public": true
   },
   "Role": {
     "dataSource": "db",
-    "public": false
+    "public": true
   },
   "item": {
     "dataSource": "mongoDB",
@@ -50,6 +50,10 @@
     "public": true
   },
   "user": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "JumbleGrouping": {
     "dataSource": "mongoDB",
     "public": true
   }

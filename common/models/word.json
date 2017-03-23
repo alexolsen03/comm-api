@@ -15,25 +15,30 @@
   "validations": [],
   "relations": {
     "translations": {
-      "type": "embedsMany",
+      "type": "hasMany",
       "model": "WordTranslation",
+      "foreignKey": "",
       "options": {
-        "validate": true,
-        "forceId": true
+        "validate": true
       }
+    },
+    "groupings": {
+      "type": "hasMany",
+      "model": "JumbleGrouping",
+      "foreignKey": ""
     }
   },
   "acls": [
     {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    },
-    {
       "accessType": "READ",
       "principalType": "ROLE",
       "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "admin",
       "permission": "ALLOW"
     }
   ],
