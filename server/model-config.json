@@ -56,5 +56,13 @@
   "JumbleGrouping": {
     "dataSource": "mongoDB",
     "public": true
+  },
+  "KnownLanguage": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "NewLanguage": {
+    "dataSource": "mongoDB",
+    "public": true
   }
 }
