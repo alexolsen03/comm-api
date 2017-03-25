@@ -1,8 +1,7 @@
 'use strict';
 
 module.exports = function(Jumble) {
-    Jumble.groupingInLanguage = function (jumbleId, langId, cb) {
-        console.log(jumbleId);
+    Jumble.groupingInLanguage = function (jumbleId, langIds, cb) {
         Jumble.find({
             "include": {
                 "relation": "grouping",
@@ -13,7 +12,7 @@ module.exports = function(Jumble) {
                           "include": {
                             "relation": "translations",
                             "scope": {
-                              "where": {"languageId": langId}
+                              "where": {"languageId": { inq: langIds} }
                             }
                           }
                         }
@@ -21,13 +20,31 @@ module.exports = function(Jumble) {
                 }
             },
             "where": {
-                        "_id": jumbleId
-                    },
+                "_id": jumbleId
+            },
         }, function (err, resp) {
-            console.log(err);
-            console.log(resp);
-            console.log('###########');
-            cb(null, resp);
+
+            var nativeLanguage = [];
+            var unknownLanguage = [];
+
+            resp.forEach(function(r) {
+                r.grouping().forEach(function (grouping) {
+                    grouping.word().translations().forEach(function (translation) {
+                        if (translation.languageId.toString() === langIds[0].toString()) {
+                            nativeLanguage.push(translation);
+                        } else {
+                            unknownLanguage.push(translation);
+                        }
+                    })
+                });
+            });
+
+            var obj = {
+                nativeLanguage: nativeLanguage,
+                unknownLanguage: unknownLanguage
+            }
+
+            cb(null, obj);
         })
     };
 
@@ -40,8 +57,8 @@ module.exports = function(Jumble) {
                 required: true
               },
                 {
-                    arg: 'languageId',
-                    type: 'string',
+                    arg: 'languageIds',
+                    type: 'array',
                     required: true
                 }
           ],
