@@ -26,7 +26,10 @@
     "language": {
       "type": "belongsTo",
       "model": "Language",
-      "foreignKey": ""
+      "foreignKey": "",
+      "options": {
+        "validate": true
+      }
     }
   },
   "acls": [

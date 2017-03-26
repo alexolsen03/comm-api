@@ -13,6 +13,9 @@ module.exports = function (app) {
 // JumbleGrouping.nestRemoting('words')
 // Word.nestRemoting('translations');
 
+    User.nestRemoting('known');
+    User.nestRemoting('unknown');
+
 
   // Language.create([
   //     {
@@ -24,6 +27,12 @@ module.exports = function (app) {
   //       description: "Korean"
   //     }
   //   ])
+  // Language.create([
+  //     {
+  //       code: "de",
+  //       description: "German"
+  //     }
+  //   ]);
 
   User.findById(
     '58cdbbe9fb4378a4630ae19b'
