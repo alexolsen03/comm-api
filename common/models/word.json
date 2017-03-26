@@ -1,0 +1,46 @@
+{
+  "name": "Word",
+  "plural": "Words",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "type": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "translations": {
+      "type": "hasMany",
+      "model": "WordTranslation",
+      "foreignKey": "",
+      "options": {
+        "validate": true
+      }
+    },
+    "groupings": {
+      "type": "hasMany",
+      "model": "JumbleGrouping",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

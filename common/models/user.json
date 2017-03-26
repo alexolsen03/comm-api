@@ -1,0 +1,56 @@
+{
+  "name": "user",
+  "plural": "users",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "roles": {
+      "type": "hasMany",
+      "model": "Role",
+      "foreignKey": "principalId",
+      "through": "RoleMapping"
+    },
+    "known": {
+      "type": "hasMany",
+      "model": "KnownLanguage",
+      "foreignKey": ""
+    },
+    "unknown": {
+      "type": "hasMany",
+      "model": "NewLanguage",
+      "foreignKey": ""
+    },
+    "reactions": {
+      "type": "hasMany",
+      "model": "Reaction",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "unlink"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "upsert"
+    }
+  ],
+  "methods": {}
+}

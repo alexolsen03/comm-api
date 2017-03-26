@@ -1,0 +1,56 @@
+{
+  "name": "Jumble",
+  "plural": "Jumbles",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "translations": {
+      "type": "hasMany",
+      "model": "WordTranslation",
+      "foreignKey": "",
+      "options": {
+        "validate": true
+      }
+    },
+    "language": {
+      "type": "belongsTo",
+      "model": "Language",
+      "foreignKey": "",
+      "options": {
+        "validate": true
+      }
+    },
+    "grouping": {
+      "type": "hasMany",
+      "model": "JumbleGrouping",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

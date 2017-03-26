@@ -6,7 +6,8 @@
     ]
   },
   "User": {
-    "dataSource": "mongoDB"
+    "dataSource": "mongoDB",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
@@ -18,13 +19,53 @@
   },
   "RoleMapping": {
     "dataSource": "db",
-    "public": false
+    "public": true
   },
   "Role": {
     "dataSource": "db",
-    "public": false
+    "public": true
   },
   "item": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Story": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Jumble": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Word": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "WordTranslation": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Language": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "user": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "JumbleGrouping": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "KnownLanguage": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "NewLanguage": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Reaction": {
     "dataSource": "mongoDB",
     "public": true
   }

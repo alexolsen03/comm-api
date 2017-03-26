@@ -1,14 +1,19 @@
 {
-  "name": "item",
-  "plural": "items",
+  "name": "Language",
+  "plural": "Languages",
   "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
   "properties": {
-    "name": {
+    "code": {
       "type": "string",
       "required": true
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
@@ -18,19 +23,13 @@
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$everyone",
-      "permission": "ALLOW"
+      "permission": "DENY"
     },
     {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$authenticated",
-      "permission": "ALLOW"
-    },
-    {
-      "accessType": "*",
+      "accessType": "READ",
       "principalType": "ROLE",
       "principalId": "$everyone",
-      "permission": "DENY"
+      "permission": "ALLOW"
     }
   ],
   "methods": {}
